@@ -1,26 +1,28 @@
 
 %%%%%%%%%%%%%%%Define Physical Model of the Domain%%%%%%%%%%%%%%%%%
 
-k1 = 1.0;                       %crack tip intensity factors
-EE = 10000;                 %Young's modulus
+k1 = 1.0;                       % crack tip intensity factors
+EE = 10000;                     % Young's modulus
 nu = 0.3;                       % Poisson's ratio
-fx = 0;                            % Loading  of  x
-fy = 0;                            % Loading  of y
-mu = EE/2/(1+nu);
+fx = 0;                         % Loading of x
+fy = 0;                         % Loading of y
+mu = EE/2/(1+nu);               % shear modulus
 
 %lambda = EE*nu/((1+nu)*(1-2*nu)); % plane strain
 %kappa = 3-4*nu; % plane strain
 
-lambda = EE*nu/(1-nu*nu); % plane stress
-kappa  = (3-nu)/(1+nu); % plane stress
+lambda = EE*nu/(1-nu*nu);   % plane stress
+kappa  = (3-nu)/(1+nu);     % plane stress
 
-%%%%%%%%%%%%%Define Geometry Model of the Domain%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%Define Geometry Model of the Domain%%%%%%%%%%%%%%%%%%%%
 nElem = 19;
 nx = nElem;
 ny = nElem;
 lx = 1;             % demension
 ly = 1;             % demension
 [NodeNum, ElemNum, xx, yy, Mesh] = GetMesh(lx, ly, nx, ny);
+
+% change the coordinate into the 
 xx = xx*2-1;
 yy = yy*2-1;
 
@@ -40,7 +42,7 @@ end
 
 Bound = find(xx == min(xx)| xx == max(xx)| yy == min(yy)| yy == max(yy));   %????????
 uDirNodes = Bound;              % ????
-vDirNodes = Bound;              %????
+vDirNodes = Bound;              % ????
 
 uDirNum = length(uDirNodes);
 vDirNum = length(vDirNodes);

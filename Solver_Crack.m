@@ -6,21 +6,22 @@ EE = 10000;                     % Young's modulus
 nu = 0.3;                       % Poisson's ratio
 fx = 0;                         % Loading of x
 fy = 0;                         % Loading of y
-mu = EE/2/(1+nu);
+mu = EE/2/(1+nu);               % shear modulus
 
 %lambda = EE*nu/((1+nu)*(1-2*nu)); % plane strain
 %kappa = 3-4*nu; % plane strain
 
-lambda = EE*nu/(1-nu*nu); % plane stress
-kappa  = (3-nu)/(1+nu); % plane stress
+lambda = EE*nu/(1-nu*nu);   % plane stress
+kappa  = (3-nu)/(1+nu);     % plane stress
 
-%%%%%%%%%%%%%Define Geometry Model of the Domain%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%Define Geometry Model of the Domain%%%%%%%%%%%%%%%%%%%%
 nElem = 19;
 nx = nElem;
 ny = nElem;
 lx = 1;             % demension
 ly = 1;             % demension
 [NodeNum, ElemNum, xx, yy, Mesh] = GetMesh(lx, ly, nx, ny);
+
 xx = xx*2-1;
 yy = yy*2-1;
 
