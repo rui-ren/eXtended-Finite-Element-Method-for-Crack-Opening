@@ -36,7 +36,6 @@ for m = 1 : length(BoundaryElems2D)
     
     Nodes = Mesh(BoundaryElems2D(m), :);
     
-    % ???????
     Segment1D(1, :) = [Nodes(1)   Nodes(2)];
     Segment1D(2, :) = [Nodes(2)   Nodes(3)];
     Segment1D(3, :) = [Nodes(3)   Nodes(4)];
