@@ -15,8 +15,6 @@ ElemMAT22 = zeros(4,4);
 ElemRHS1 = zeros(4,1);
 ElemRHS2 = zeros(4,1);
 
-% Loop over integration points
-
 for i = 1 : nQ
     
     N = NMat(:, i);
