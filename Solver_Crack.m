@@ -92,10 +92,10 @@ RHS = zeros(12*NodeNum,1);
 % Domain integration
 
 for CurrElem = 1 : ElemNum
-    Nodes = Mesh(CurrElem,:);                           % ???????
+    Nodes = Mesh(CurrElem,:);                                % ???????
     xxElem = xx(Nodes)';                                     % ??X ???
     yyElem = yy(Nodes)';                                     % ??Y ???
-    ffElem = ff(Nodes);                                        % ??R ???
+    ffElem = ff(Nodes);                                      % ??R ???
     
     % Activated nodes for sign-enrichment.
     % ???????????

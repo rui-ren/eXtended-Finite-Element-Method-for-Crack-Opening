@@ -22,7 +22,6 @@ lx = 1;             % demension
 ly = 1;             % demension
 [NodeNum, ElemNum, xx, yy, Mesh] = GetMesh(lx, ly, nx, ny);
 
-% change the coordinate into the 
 xx = xx*2-1;
 yy = yy*2-1;
 
@@ -93,10 +92,10 @@ RHS = zeros(12*NodeNum,1);
 % Domain integration
 
 for CurrElem = 1 : ElemNum
-    Nodes = Mesh(CurrElem,:);                           % ???????
+    Nodes = Mesh(CurrElem,:);                                % ???????
     xxElem = xx(Nodes)';                                     % ??X ???
     yyElem = yy(Nodes)';                                     % ??Y ???
-    ffElem = ff(Nodes);                                        % ??R ???
+    ffElem = ff(Nodes);                                      % ??R ???
     
     % Activated nodes for sign-enrichment.
     % ???????????
